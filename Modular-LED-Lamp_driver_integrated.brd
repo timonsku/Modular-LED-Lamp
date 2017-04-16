@@ -6,7 +6,7 @@
 <setting alwaysvectorfont="no"/>
 <setting verticaltext="up"/>
 </settings>
-<grid distance="1" unitdist="mil" unit="mil" style="lines" multiple="1" display="yes" altdistance="0.025" altunitdist="inch" altunit="inch"/>
+<grid distance="0.5" unitdist="mm" unit="mm" style="lines" multiple="1" display="yes" altdistance="0.025" altunitdist="inch" altunit="inch"/>
 <layers>
 <layer number="1" name="Top" color="4" fill="1" visible="yes" active="yes"/>
 <layer number="2" name="Route2" color="1" fill="3" visible="no" active="no"/>
@@ -144,12 +144,20 @@
 </layers>
 <board>
 <plain>
-<wire x1="5" y1="1" x2="45" y2="1" width="0" layer="20"/>
-<wire x1="45" y1="1" x2="45" y2="45" width="0" layer="20"/>
-<wire x1="45" y1="45" x2="5" y2="45" width="0" layer="20"/>
-<wire x1="5" y1="45" x2="5" y2="1" width="0" layer="20"/>
-<text x="23.241" y="37.719" size="0.6096" layer="21">Left and Right Side LEDs
+<text x="23.241" y="42.719" size="0.6096" layer="21">Left and Right Side LEDs
 are mounted different!</text>
+<hole x="2.5" y="50" drill="2"/>
+<hole x="46.5" y="50" drill="2"/>
+<hole x="2.5" y="0" drill="2"/>
+<hole x="46.5" y="0" drill="2"/>
+<wire x1="46" y1="-3" x2="49.5" y2="0.5" width="0" layer="20" curve="90"/>
+<wire x1="49.5" y1="0.5" x2="49.5" y2="49.5" width="0" layer="20"/>
+<wire x1="49.5" y1="49.5" x2="46" y2="53" width="0" layer="20" curve="90"/>
+<wire x1="46" y1="53" x2="3" y2="53" width="0" layer="20"/>
+<wire x1="3" y1="53" x2="-0.5" y2="49.5" width="0" layer="20" curve="90"/>
+<wire x1="-0.5" y1="49.5" x2="-0.5" y2="0.5" width="0" layer="20"/>
+<wire x1="-0.5" y1="0.5" x2="3" y2="-3" width="0" layer="20" curve="90"/>
+<wire x1="3" y1="-3" x2="46" y2="-3" width="0" layer="20"/>
 </plain>
 <libraries>
 <library name="timon-diverses">
@@ -248,21 +256,6 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <text x="-2.286" y="1.651" size="0.4064" layer="25">&gt;NAME</text>
 <text x="0.254" y="1.651" size="0.4064" layer="27">&gt;VALUE</text>
 </package>
-<package name="SMA-DIODE">
-<description>&lt;B&gt;Diode&lt;/B&gt;&lt;p&gt;
-Basic SMA packaged diode. Good for reverse polarization protection. Common part #: MBRA140</description>
-<wire x1="-2.3" y1="1" x2="-2.3" y2="1.45" width="0.2032" layer="21"/>
-<wire x1="-2.3" y1="1.45" x2="2.3" y2="1.45" width="0.2032" layer="21"/>
-<wire x1="2.3" y1="1.45" x2="2.3" y2="1" width="0.2032" layer="21"/>
-<wire x1="2.3" y1="-1" x2="2.3" y2="-1.45" width="0.2032" layer="21"/>
-<wire x1="2.3" y1="-1.45" x2="-2.3" y2="-1.45" width="0.2032" layer="21"/>
-<wire x1="-2.3" y1="-1.45" x2="-2.3" y2="-1" width="0.2032" layer="21"/>
-<wire x1="1" y1="1" x2="1" y2="-1" width="0.2032" layer="21"/>
-<smd name="A" x="-2.15" y="0" dx="1.27" dy="1.47" layer="1" rot="R180"/>
-<smd name="C" x="2.15" y="0" dx="1.27" dy="1.47" layer="1"/>
-<text x="-2.286" y="1.651" size="0.4064" layer="25">&gt;NAME</text>
-<text x="0.254" y="1.651" size="0.4064" layer="27">&gt;VALUE</text>
-</package>
 </packages>
 </library>
 <library name="SparkFun-Capacitors">
@@ -353,7 +346,7 @@ Modified: by Eugene Sadovoi evgeni@eniks.com&lt;/author&gt;</description>
 <class number="0" name="default" width="0" drill="0">
 </class>
 </classes>
-<designrules name="OthermillDRC_1_100_v2">
+<designrules name="OthermillDRC_1_100_v2 *">
 <description language="en">&lt;b&gt;Othermill EAGLE Design Rules v2&lt;/b&gt;
 &lt;p&gt;DRC for Othermill, 1/100&quot; tool&lt;/p&gt;
 &lt;b&gt;-- Rules --&lt;/b&gt;&lt;li&gt;8 mil traces&lt;/li&gt;
@@ -362,8 +355,8 @@ Modified: by Eugene Sadovoi evgeni@eniks.com&lt;/author&gt;</description>
 <param name="layerSetup" value="(1*16)"/>
 <param name="mtCopper" value="0.035mm 0.035mm 0.035mm 0.035mm 0.035mm 0.035mm 0.035mm 0.035mm 0.035mm 0.035mm 0.035mm 0.035mm 0.035mm 0.035mm 0.035mm 0.035mm"/>
 <param name="mtIsolate" value="1.5mm 0.15mm 0.2mm 0.15mm 0.2mm 0.15mm 0.2mm 0.15mm 0.2mm 0.15mm 0.2mm 0.15mm 0.2mm 0.15mm 0.2mm"/>
-<param name="mdWireWire" value="0.256540625mm"/>
-<param name="mdWirePad" value="0.256540625mm"/>
+<param name="mdWireWire" value="0.8mm"/>
+<param name="mdWirePad" value="0.8mm"/>
 <param name="mdWireVia" value="0.256540625mm"/>
 <param name="mdPadPad" value="0.256540625mm"/>
 <param name="mdPadVia" value="0.256540625mm"/>
@@ -524,25 +517,28 @@ Modified: by Eugene Sadovoi evgeni@eniks.com&lt;/author&gt;</description>
 </pass>
 </autorouter>
 <elements>
-<element name="GND-CLIP" library="timon-diverses" package="FUSE-HOLDER-5X20MM" value="GND" x="39" y="42"/>
-<element name="GND-CLIP2" library="timon-diverses" package="FUSE-HOLDER-5X20MM" value="GND" x="39" y="4"/>
-<element name="LED-1" library="SparkFun-LED" package="LUXEON" value="LUXEONSMD" x="40" y="32" rot="R270"/>
-<element name="LED-2" library="SparkFun-LED" package="LUXEON" value="LUXEONSMD" x="10" y="14" rot="R90"/>
-<element name="LED-3" library="SparkFun-LED" package="LUXEON" value="LUXEONSMD" x="10" y="32" rot="R90"/>
-<element name="LED-4" library="SparkFun-LED" package="LUXEON" value="LUXEONSMD" x="40" y="14" rot="R270"/>
-<element name="PWM-CLIP" library="timon-diverses" package="FUSE-HOLDER-5X20MM" value="FUSE-HOLDER-5X20MM" x="23" y="42"/>
-<element name="VCC-CLIP" library="timon-diverses" package="FUSE-HOLDER-5X20MM" value="FUSE-HOLDER-5X20MM" x="11" y="42"/>
-<element name="VCC-CLIP2" library="timon-diverses" package="FUSE-HOLDER-5X20MM" value="FUSE-HOLDER-5X20MM" x="11" y="4"/>
-<element name="IC4" library="PT4115" package="PT4115" value="" x="30.8642" y="19.596"/>
-<element name="R4" library="SparkFun-Resistors" package="0805" value="0.13" x="32.3436" y="25.7132" rot="R180">
-<attribute name="PROD_ID" value="RES-11622" x="44.6118" y="9.0254" size="1.778" layer="27" rot="R180" display="off"/>
+<element name="GND-CLIP" library="timon-diverses" package="FUSE-HOLDER-5X20MM" value="GND" x="39" y="47"/>
+<element name="GND-CLIP2" library="timon-diverses" package="FUSE-HOLDER-5X20MM" value="GND" x="39" y="3.5"/>
+<element name="LED-1" library="SparkFun-LED" package="LUXEON" value="LUXEONSMD" x="43" y="34" rot="R270"/>
+<element name="LED-2" library="SparkFun-LED" package="LUXEON" value="LUXEONSMD" x="7.5" y="16" rot="R90"/>
+<element name="LED-3" library="SparkFun-LED" package="LUXEON" value="LUXEONSMD" x="7.5" y="34" rot="R90"/>
+<element name="LED-4" library="SparkFun-LED" package="LUXEON" value="LUXEONSMD" x="43" y="16" rot="R270"/>
+<element name="PWM-CLIP" library="timon-diverses" package="FUSE-HOLDER-5X20MM" value="FUSE-HOLDER-5X20MM" x="23" y="47"/>
+<element name="VCC-CLIP" library="timon-diverses" package="FUSE-HOLDER-5X20MM" value="FUSE-HOLDER-5X20MM" x="11" y="47"/>
+<element name="VCC-CLIP2" library="timon-diverses" package="FUSE-HOLDER-5X20MM" value="FUSE-HOLDER-5X20MM" x="11" y="3.46"/>
+<element name="IC4" library="PT4115" package="PT4115" value="" x="32.5152" y="21.6214"/>
+<element name="R4" library="SparkFun-Resistors" package="0805" value="0.33" x="34.0708" y="27.2052" rot="R180">
+<attribute name="PROD_ID" value="RES-11622" x="46.339" y="10.5174" size="1.778" layer="27" rot="R180" display="off"/>
 </element>
-<element name="D4" library="SparkFun-DiscreteSemi" package="SMA-DIODE-KIT" value="" x="28.1638" y="21.9358" rot="R90"/>
-<element name="C1" library="SparkFun-Capacitors" package="PANASONIC_E" value="100uF" x="21.7934" y="26.4114"/>
-<element name="D1" library="SparkFun-DiscreteSemi" package="SMA-DIODE" value="B340A" x="21.3556" y="34.7084">
-<attribute name="PROD_ID" value="DIO-09886" x="21.3556" y="34.7084" size="1.778" layer="27" display="off"/>
-</element>
-<element name="U$1" library="inductor-coilcraft" package="MSS1260" value="" x="24.5008" y="11.1836" rot="R180"/>
+<element name="D4" library="SparkFun-DiscreteSemi" package="SMA-DIODE-KIT" value="" x="28.1638" y="23.9358" rot="R90"/>
+<element name="C1" library="SparkFun-Capacitors" package="PANASONIC_E" value="100uF" x="21.7934" y="28.4114"/>
+<element name="U$1" library="inductor-coilcraft" package="MSS1260" value="" x="24.5008" y="13.1836" rot="R180"/>
+<element name="VCC-CLIP1" library="timon-diverses" package="FUSE-HOLDER-5X20MM" value="FUSE-HOLDER-5X20MM" x="10.9974" y="3.459" rot="R90"/>
+<element name="VCC-CLIP3" library="timon-diverses" package="FUSE-HOLDER-5X20MM" value="FUSE-HOLDER-5X20MM" x="10.998" y="46.994" rot="MR270"/>
+<element name="GND-CLIP1" library="timon-diverses" package="FUSE-HOLDER-5X20MM" value="GND" x="38.998" y="3.496" rot="R90"/>
+<element name="GND-CLIP3" library="timon-diverses" package="FUSE-HOLDER-5X20MM" value="GND" x="38.998" y="46.996" rot="R90"/>
+<element name="PWM-CLIP1" library="timon-diverses" package="FUSE-HOLDER-5X20MM" value="FUSE-HOLDER-5X20MM" x="22.998" y="46.996" rot="R90"/>
+<element name="D2" library="SparkFun-DiscreteSemi" package="SMA-DIODE-KIT" value="" x="21" y="38"/>
 </elements>
 <signals>
 <signal name="VCC">
@@ -550,29 +546,17 @@ Modified: by Eugene Sadovoi evgeni@eniks.com&lt;/author&gt;</description>
 <contactref element="R4" pad="2"/>
 <contactref element="D4" pad="C"/>
 <contactref element="C1" pad="+"/>
-<contactref element="D1" pad="C"/>
-<wire x1="23.5056" y1="34.7084" x2="23.7744" y2="30.8074" width="0.8128" layer="1"/>
-<wire x1="23.7744" y1="30.8074" x2="23.876" y2="27.7114" width="0.8128" layer="1"/>
-<wire x1="23.876" y1="27.7114" x2="23.914" y2="26.5304" width="0.8128" layer="1"/>
-<wire x1="23.914" y1="26.5304" x2="24.7934" y2="26.4114" width="0.8128" layer="1"/>
-<wire x1="28.1638" y1="24.3358" x2="24.7934" y2="26.4114" width="0.8128" layer="1"/>
-<wire x1="30.8642" y1="24.384" x2="30.8642" y2="22.846" width="0.4064" layer="1"/>
-<wire x1="28.1638" y1="24.3358" x2="28.212" y2="24.384" width="0.6096" layer="1"/>
-<wire x1="28.212" y1="24.384" x2="29.972" y2="24.384" width="0.4064" layer="1"/>
-<wire x1="29.972" y1="24.384" x2="30.099" y2="24.384" width="0.4064" layer="1"/>
-<wire x1="30.099" y1="24.384" x2="30.8642" y2="24.384" width="0.4064" layer="1"/>
-<wire x1="29.972" y1="24.384" x2="29.591" y2="24.384" width="0.254" layer="1"/>
-<wire x1="29.591" y1="24.384" x2="29.591" y2="25.4" width="0.254" layer="1"/>
-<wire x1="29.591" y1="25.4" x2="28.956" y2="26.035" width="0.254" layer="1"/>
-<wire x1="28.956" y1="26.035" x2="28.194" y2="26.035" width="0.254" layer="1"/>
-<wire x1="28.194" y1="26.035" x2="27.94" y2="26.289" width="0.254" layer="1"/>
-<wire x1="27.94" y1="26.289" x2="27.94" y2="26.67" width="0.254" layer="1"/>
-<wire x1="27.94" y1="26.67" x2="28.448" y2="27.178" width="0.254" layer="1"/>
-<wire x1="28.448" y1="27.178" x2="29.9788" y2="27.178" width="0.254" layer="1"/>
-<wire x1="29.9788" y1="27.178" x2="31.4436" y2="25.7132" width="0.254" layer="1"/>
-<wire x1="30.099" y1="24.384" x2="30.099" y2="25.019" width="0.254" layer="1"/>
-<wire x1="30.099" y1="25.019" x2="30.734" y2="25.654" width="0.254" layer="1"/>
-<wire x1="30.734" y1="25.654" x2="31.369" y2="25.654" width="0.254" layer="1"/>
+<wire x1="28.1638" y1="26.3358" x2="24.7934" y2="28.4114" width="1.27" layer="1"/>
+<wire x1="28.1638" y1="26.3358" x2="29.6282" y2="24.8714" width="1.27" layer="1"/>
+<wire x1="32.5152" y1="24.8714" x2="32.5152" y2="27.2052" width="0.5588" layer="1"/>
+<wire x1="32.5152" y1="27.2052" x2="33.1708" y2="27.2052" width="0.5588" layer="1"/>
+<wire x1="29.6282" y1="24.8714" x2="32.0548" y2="24.5872" width="1.27" layer="1"/>
+<wire x1="32.0548" y1="24.5872" x2="32.5152" y2="24.8714" width="0.508" layer="1"/>
+<contactref element="D2" pad="C"/>
+<wire x1="23.4" y1="38" x2="23.622" y2="38" width="1.27" layer="1"/>
+<wire x1="23.622" y1="38" x2="23.622" y2="28.448" width="1.27" layer="1"/>
+<wire x1="23.622" y1="28.448" x2="24.7934" y2="28.448" width="1.27" layer="1"/>
+<wire x1="24.7934" y1="28.448" x2="24.7934" y2="28.4114" width="1.27" layer="1"/>
 </signal>
 <signal name="GND">
 <contactref element="GND-CLIP" pad="CLIP-INPUT1"/>
@@ -582,104 +566,129 @@ Modified: by Eugene Sadovoi evgeni@eniks.com&lt;/author&gt;</description>
 <contactref element="IC4" pad="2"/>
 <contactref element="IC4" pad="2A"/>
 <contactref element="C1" pad="-"/>
-<contactref element="LED-2" pad="S"/>
-<contactref element="LED-4" pad="S"/>
-<contactref element="LED-1" pad="S"/>
-<contactref element="LED-3" pad="S"/>
-<polygon width="0.4064" layer="1">
-<vertex x="-1" y="47"/>
-<vertex x="50" y="47"/>
-<vertex x="50" y="-3"/>
+<polygon width="0.4064" layer="1" thermals="no">
+<vertex x="-1" y="53"/>
+<vertex x="52" y="53"/>
+<vertex x="52" y="-3"/>
 <vertex x="-1" y="-3"/>
 </polygon>
 <polygon width="0.4064" layer="16">
-<vertex x="-2" y="48"/>
-<vertex x="51" y="48"/>
+<vertex x="-2" y="53.5"/>
+<vertex x="51" y="53.5"/>
 <vertex x="51" y="-4"/>
 <vertex x="-2" y="-4"/>
 </polygon>
+<contactref element="LED-1" pad="S"/>
+<contactref element="LED-4" pad="S"/>
+<contactref element="LED-2" pad="S"/>
+<contactref element="LED-3" pad="S"/>
+<contactref element="GND-CLIP1" pad="CLIP-INPUT2"/>
+<contactref element="GND-CLIP1" pad="CLIP-INPUT1"/>
+<contactref element="GND-CLIP3" pad="CLIP-INPUT2"/>
+<contactref element="GND-CLIP3" pad="CLIP-INPUT1"/>
+<wire x1="43" y1="34" x2="38.998" y2="44.346" width="0" layer="19" extent="1-1"/>
 </signal>
 <signal name="LED-">
 <contactref element="LED-3" pad="C"/>
 <contactref element="U$1" pad="P$1"/>
-<wire x1="24.5008" y1="6.9336" x2="23.775" y2="6.9336" width="1.27" layer="1"/>
-<wire x1="23.775" y1="6.9336" x2="16.2814" y2="14.4272" width="1.27" layer="1"/>
-<wire x1="16.2814" y1="14.4272" x2="16.2814" y2="22.86" width="1.27" layer="1"/>
-<wire x1="16.2814" y1="22.86" x2="14.9098" y2="24.2316" width="1.27" layer="1"/>
-<wire x1="14.9098" y1="24.2316" x2="14.9098" y2="36.1188" width="1.27" layer="1"/>
-<wire x1="14.9098" y1="36.1188" x2="12.9032" y2="38.1254" width="1.27" layer="1"/>
-<wire x1="12.9032" y1="38.1254" x2="8.9254" y2="38.1254" width="1.27" layer="1"/>
-<wire x1="8.9254" y1="38.1254" x2="8.9" y2="38.1" width="1.27" layer="1"/>
+<wire x1="24.5008" y1="8.9336" x2="23.775" y2="8.9336" width="1.27" layer="1"/>
+<wire x1="23.775" y1="8.9336" x2="16.2814" y2="16.4272" width="1.27" layer="1"/>
+<wire x1="16.2814" y1="16.4272" x2="16.2814" y2="24.86" width="1.27" layer="1"/>
+<wire x1="16.2814" y1="24.86" x2="14.9098" y2="26.2316" width="1.27" layer="1"/>
+<wire x1="14.9098" y1="26.2316" x2="14.9098" y2="38.1188" width="1.27" layer="1"/>
+<wire x1="14.9098" y1="38.1188" x2="13.1572" y2="40.0774" width="1.27" layer="1"/>
+<wire x1="13.1572" y1="40.0774" x2="9.1794" y2="40.0774" width="1.27" layer="1"/>
+<wire x1="9.1794" y1="40.0774" x2="6.4" y2="40.1" width="1.27" layer="1"/>
 </signal>
 <signal name="LED+">
 <contactref element="LED-1" pad="A"/>
 <contactref element="R4" pad="1"/>
 <contactref element="IC4" pad="4"/>
-<wire x1="38.9" y1="38.1" x2="33.8836" y2="38.1" width="0.8128" layer="1"/>
-<wire x1="33.8836" y1="38.1" x2="27.8892" y2="44.1706" width="0.8128" layer="1"/>
-<wire x1="27.8892" y1="44.1706" x2="18.7452" y2="44.1706" width="0.8128" layer="1"/>
-<wire x1="18.7452" y1="44.1706" x2="17.4244" y2="42.7736" width="0.8128" layer="1"/>
-<wire x1="17.4244" y1="42.7736" x2="17.4244" y2="40.6654" width="0.8128" layer="1"/>
-<wire x1="17.4244" y1="40.6654" x2="20.0914" y2="38.0238" width="0.8128" layer="1"/>
-<wire x1="20.0914" y1="38.0238" x2="26.3652" y2="38.0238" width="0.8128" layer="1"/>
-<wire x1="26.3652" y1="38.0238" x2="26.8732" y2="37.5158" width="0.8128" layer="1"/>
-<wire x1="26.8732" y1="37.5158" x2="26.8732" y2="32.9692" width="0.8128" layer="1"/>
-<wire x1="26.8732" y1="32.9692" x2="33.2486" y2="26.5938" width="0.8128" layer="1"/>
-<wire x1="33.2486" y1="26.5938" x2="33.2486" y2="25.7182" width="0.8128" layer="1"/>
-<wire x1="33.2486" y1="25.7182" x2="33.2436" y2="25.7132" width="0.8128" layer="1"/>
-<wire x1="33.2436" y1="25.7132" x2="33.8642" y2="25.0926" width="0.6096" layer="1"/>
-<wire x1="33.8642" y1="25.0926" x2="33.8642" y2="22.846" width="0.6096" layer="1"/>
+<wire x1="35.5152" y1="24.8714" x2="35.5152" y2="27.2052" width="0.5588" layer="1"/>
+<wire x1="35.5152" y1="27.2052" x2="34.9708" y2="27.2052" width="0.5588" layer="1"/>
+<wire x1="34.9708" y1="27.2052" x2="34.9708" y2="36.1708" width="0.8128" layer="1"/>
+<wire x1="34.9708" y1="36.1708" x2="41.9" y2="40.1" width="0.8128" layer="1"/>
 </signal>
 <signal name="PWM">
 <contactref element="PWM-CLIP" pad="CLIP-INPUT1"/>
 <contactref element="PWM-CLIP" pad="CLIP-INPUT2"/>
 <contactref element="IC4" pad="3"/>
-<wire x1="25.65" y1="42" x2="30.095" y2="36.4344" width="0.4064" layer="1"/>
-<wire x1="20.35" y1="42" x2="25.65" y2="42" width="0.4064" layer="1"/>
-<wire x1="33.8642" y1="19.596" x2="34.798" y2="20.5298" width="0.4064" layer="1"/>
-<wire x1="34.798" y1="20.5298" x2="34.8234" y2="27.2796" width="0.4064" layer="1"/>
-<wire x1="34.8234" y1="27.2796" x2="30.095" y2="32.1096" width="0.4064" layer="1"/>
-<wire x1="30.095" y1="32.1096" x2="30.095" y2="36.4344" width="0.4064" layer="1"/>
+<wire x1="20.35" y1="47" x2="22.86" y2="47" width="0.4064" layer="1"/>
+<wire x1="22.86" y1="47" x2="23.114" y2="47" width="0.4064" layer="1"/>
+<wire x1="23.114" y1="47" x2="25.65" y2="47" width="0.4064" layer="1"/>
+<wire x1="35.5152" y1="21.6214" x2="36.4616" y2="21.6214" width="0.4064" layer="1"/>
+<wire x1="36.4616" y1="21.6214" x2="36.9316" y2="22.0914" width="0.4064" layer="1"/>
+<wire x1="36.9316" y1="22.0914" x2="36.9316" y2="24.225" width="0.4064" layer="1"/>
+<wire x1="36.9316" y1="24.225" x2="37.9984" y2="25.2918" width="0.4064" layer="1"/>
+<wire x1="37.9984" y1="25.2918" x2="37.9984" y2="28.797" width="0.4064" layer="1"/>
+<wire x1="37.9984" y1="28.797" x2="39.4208" y2="30.2194" width="0.4064" layer="1"/>
+<wire x1="39.4208" y1="30.2194" x2="45.9674" y2="30.2194" width="0.4064" layer="1"/>
+<wire x1="27.4222" y1="44.7722" x2="25.65" y2="47" width="0.4064" layer="1"/>
+<contactref element="PWM-CLIP1" pad="CLIP-INPUT2"/>
+<contactref element="PWM-CLIP1" pad="CLIP-INPUT1"/>
+<wire x1="45.9674" y1="30.2194" x2="48.006" y2="32.258" width="0.4064" layer="1"/>
+<wire x1="48.006" y1="32.258" x2="48.006" y2="40.132" width="0.4064" layer="1"/>
+<wire x1="48.006" y1="40.132" x2="45.466" y2="42.672" width="0.4064" layer="1"/>
+<wire x1="45.466" y1="42.672" x2="40.64" y2="42.672" width="0.4064" layer="1"/>
+<wire x1="40.64" y1="42.672" x2="39.116" y2="41.148" width="0.4064" layer="1"/>
+<wire x1="39.116" y1="41.148" x2="31.0464" y2="41.148" width="0.4064" layer="1"/>
+<wire x1="31.0464" y1="41.148" x2="27.4222" y2="44.7722" width="0.4064" layer="1"/>
+<wire x1="22.998" y1="44.346" x2="22.998" y2="46.884" width="0.4064" layer="1"/>
+<wire x1="22.998" y1="46.884" x2="23.114" y2="47" width="0.4064" layer="1"/>
+<wire x1="22.998" y1="49.646" x2="22.998" y2="47.138" width="0.4064" layer="1"/>
+<wire x1="22.998" y1="47.138" x2="22.86" y2="47" width="0.4064" layer="1"/>
 </signal>
 <signal name="N$1">
 <contactref element="D4" pad="A"/>
 <contactref element="IC4" pad="1"/>
 <contactref element="U$1" pad="P$2"/>
-<wire x1="30.8642" y1="19.596" x2="28.1638" y2="19.5358" width="0.8128" layer="1"/>
-<wire x1="28.1638" y1="19.5358" x2="24.5008" y2="15.4336" width="0.8128" layer="1"/>
+<wire x1="32.5152" y1="21.6214" x2="28.1638" y2="21.5358" width="0.8128" layer="1"/>
+<wire x1="28.1638" y1="21.5358" x2="24.5008" y2="17.4336" width="0.8128" layer="1"/>
 </signal>
 <signal name="VCC-RAW">
-<contactref element="D1" pad="A"/>
 <contactref element="VCC-CLIP2" pad="CLIP-INPUT1"/>
 <contactref element="VCC-CLIP2" pad="CLIP-INPUT2"/>
 <contactref element="VCC-CLIP" pad="CLIP-INPUT1"/>
 <contactref element="VCC-CLIP" pad="CLIP-INPUT2"/>
-<wire x1="13.65" y1="42" x2="18.85" y2="36.8" width="0.8128" layer="1"/>
-<wire x1="18.85" y1="36.8" x2="19.2056" y2="34.7084" width="0.8128" layer="1"/>
-<wire x1="8.35" y1="4" x2="8.35" y2="42" width="1.778" layer="16"/>
-<wire x1="13.65" y1="4" x2="8.35" y2="4" width="1.778" layer="16"/>
-<wire x1="8.35" y1="42" x2="13.65" y2="42" width="1.778" layer="1"/>
+<wire x1="13.65" y1="47" x2="18.55" y2="40" width="1.27" layer="1"/>
+<wire x1="8.35" y1="47" x2="11" y2="47" width="2.032" layer="1"/>
+<wire x1="11" y1="47" x2="13.65" y2="47" width="2.032" layer="1"/>
+<wire x1="13.65" y1="3.46" x2="10.922" y2="3.46" width="2.032" layer="1"/>
+<wire x1="10.922" y1="3.46" x2="8.35" y2="3.46" width="2.032" layer="1"/>
+<wire x1="13.65" y1="3.46" x2="13.65" y2="47" width="2.032" layer="16"/>
+<contactref element="VCC-CLIP1" pad="CLIP-INPUT2"/>
+<contactref element="VCC-CLIP1" pad="CLIP-INPUT1"/>
+<contactref element="VCC-CLIP3" pad="CLIP-INPUT2"/>
+<contactref element="VCC-CLIP3" pad="CLIP-INPUT1"/>
+<wire x1="10.9974" y1="0.809" x2="10.9974" y2="6.109" width="2.032" layer="1"/>
+<wire x1="10.9974" y1="6.109" x2="10.9974" y2="3.5354" width="2.032" layer="1"/>
+<wire x1="10.9974" y1="3.5354" x2="10.922" y2="3.46" width="2.032" layer="1"/>
+<wire x1="10.998" y1="44.344" x2="11" y2="47" width="2.032" layer="1"/>
+<wire x1="10.998" y1="49.644" x2="11" y2="47" width="2.032" layer="1"/>
+<contactref element="D2" pad="A"/>
+<wire x1="18.6" y1="38" x2="18.55" y2="38" width="1.27" layer="1"/>
+<wire x1="18.55" y1="38" x2="18.55" y2="40" width="1.27" layer="1"/>
 </signal>
 <signal name="N$2">
 <contactref element="LED-4" pad="C"/>
 <contactref element="LED-2" pad="A"/>
-<wire x1="11.1" y1="7.9" x2="15.1124" y2="7.9" width="1.27" layer="1"/>
-<wire x1="15.1124" y1="7.9" x2="19.9898" y2="3.0226" width="1.27" layer="1"/>
-<wire x1="19.9898" y1="3.0226" x2="30.6832" y2="3.0226" width="1.27" layer="1"/>
-<wire x1="30.6832" y1="3.0226" x2="35.5606" y2="7.9" width="1.27" layer="1"/>
-<wire x1="35.5606" y1="7.9" x2="41.1" y2="7.9" width="1.27" layer="1"/>
+<wire x1="8.6" y1="9.9" x2="15.1124" y2="9.9" width="1.27" layer="1"/>
+<wire x1="15.1124" y1="9.9" x2="19.9898" y2="5.0226" width="1.27" layer="1"/>
+<wire x1="19.9898" y1="5.0226" x2="30.6832" y2="5.0226" width="1.27" layer="1"/>
+<wire x1="30.6832" y1="5.0226" x2="35.5606" y2="9.9" width="1.27" layer="1"/>
+<wire x1="35.5606" y1="9.9" x2="44.1" y2="9.9" width="1.27" layer="1"/>
 </signal>
 <signal name="N$3">
 <contactref element="LED-2" pad="C"/>
 <contactref element="LED-3" pad="A"/>
-<wire x1="11.1" y1="25.9" x2="11.1" y2="22.3" width="1.27" layer="1"/>
-<wire x1="11.1" y1="22.3" x2="8.9" y2="20.1" width="1.27" layer="1"/>
+<wire x1="8.6" y1="27.9" x2="8.6" y2="24.3" width="1.27" layer="1"/>
+<wire x1="8.6" y1="24.3" x2="6.4" y2="22.1" width="1.27" layer="1"/>
 </signal>
 <signal name="N$4">
 <contactref element="LED-1" pad="C"/>
 <contactref element="LED-4" pad="A"/>
-<wire x1="38.9" y1="20.1" x2="41.1" y2="22.3" width="1.27" layer="1"/>
-<wire x1="41.1" y1="22.3" x2="41.1" y2="25.9" width="1.27" layer="1"/>
+<wire x1="41.9" y1="22.1" x2="44.1" y2="24.3" width="1.27" layer="1"/>
+<wire x1="44.1" y1="24.3" x2="44.1" y2="27.9" width="1.27" layer="1"/>
 </signal>
 </signals>
 </board>
