@@ -4,6 +4,10 @@
 ### Eagle ###
 # Ignore list for Eagle, a PCB layout tool
 
+# Gerber stuff
+*.ger
+*.zip
+
 # Backup files
 *.s#?
 *.b#?
