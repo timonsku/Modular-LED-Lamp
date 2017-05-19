@@ -1924,6 +1924,7 @@ Modified: by Eugene Sadovoi evgeni@eniks.com&lt;/author&gt;</description>
 <part name="GND6" library="supply1" deviceset="GND" device=""/>
 <part name="PWM-CLIP1" library="timon-diverses" deviceset="FUSE-HOLDER-5X20MM" device=""/>
 <part name="D2" library="SparkFun-DiscreteSemi" deviceset="DIODE" device="SMA-KIT"/>
+<part name="R1" library="SparkFun-Resistors" deviceset="RESISTOR" device="1206" value="2k"/>
 </parts>
 <sheets>
 <sheet>
@@ -1971,6 +1972,7 @@ Modified: by Eugene Sadovoi evgeni@eniks.com&lt;/author&gt;</description>
 <attribute name="NAME" x="121.92" y="41.4274" size="1.778" layer="95" rot="R180"/>
 <attribute name="VALUE" x="119.38" y="45.4914" size="1.778" layer="96" rot="R180"/>
 </instance>
+<instance part="R1" gate="G$1" x="81.28" y="-25.4"/>
 </instances>
 <busses>
 </busses>
@@ -2077,14 +2079,14 @@ Modified: by Eugene Sadovoi evgeni@eniks.com&lt;/author&gt;</description>
 <label x="116.84" y="22.86" size="1.778" layer="95"/>
 </segment>
 <segment>
-<pinref part="IC4" gate="IC" pin="DIM"/>
-<wire x1="86.36" y1="-25.4" x2="76.2" y2="-25.4" width="0.1524" layer="91"/>
-<label x="76.2" y="-25.4" size="1.778" layer="95"/>
-</segment>
-<segment>
 <pinref part="PWM-CLIP1" gate="CLIP" pin="INPUT"/>
 <wire x1="144.78" y1="25.4" x2="149.86" y2="25.4" width="0.1524" layer="91"/>
 <label x="147.32" y="22.86" size="1.778" layer="95"/>
+</segment>
+<segment>
+<pinref part="R1" gate="G$1" pin="1"/>
+<wire x1="76.2" y1="-25.4" x2="73.66" y2="-25.4" width="0.1524" layer="91"/>
+<label x="66.04" y="-25.4" size="1.778" layer="95"/>
 </segment>
 </net>
 <net name="N$1" class="0">
@@ -2143,6 +2145,12 @@ Modified: by Eugene Sadovoi evgeni@eniks.com&lt;/author&gt;</description>
 <pinref part="LED-1" gate="G$1" pin="C"/>
 <pinref part="LED-4" gate="G$1" pin="A"/>
 <wire x1="22.86" y1="20.32" x2="22.86" y2="7.62" width="0.1524" layer="91"/>
+</segment>
+</net>
+<net name="N$5" class="0">
+<segment>
+<pinref part="IC4" gate="IC" pin="DIM"/>
+<pinref part="R1" gate="G$1" pin="2"/>
 </segment>
 </net>
 </nets>

@@ -7,6 +7,7 @@
 # Gerber stuff
 *.ger
 *.zip
+*.xln
 
 # Backup files
 *.s#?
@@ -50,7 +51,6 @@ eagle.epf
 *.png
 *.jpg
 *.dxf
-*.pdf
 
 # file locks introduced since 7.x
 *.lck
