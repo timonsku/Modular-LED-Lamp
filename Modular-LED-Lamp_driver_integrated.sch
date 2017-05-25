@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE eagle SYSTEM "eagle.dtd">
-<eagle version="7.7.0">
+<eagle version="8.2.0">
 <drawing>
 <settings>
 <setting alwaysvectorfont="no"/>
 <setting verticaltext="up"/>
 </settings>
-<grid distance="0.1" unitdist="inch" unit="inch" style="lines" multiple="1" display="no" altdistance="0.01" altunitdist="inch" altunit="inch"/>
+<grid distance="0.05" unitdist="inch" unit="inch" style="lines" multiple="1" display="yes" altdistance="0.01" altunitdist="inch" altunit="inch"/>
 <layers>
 <layer number="1" name="Top" color="4" fill="1" visible="no" active="no"/>
 <layer number="2" name="Route2" color="1" fill="3" visible="no" active="no"/>
@@ -1879,6 +1879,52 @@ Modified: by Eugene Sadovoi evgeni@eniks.com&lt;/author&gt;</description>
 </deviceset>
 </devicesets>
 </library>
+<library name="frames">
+<description>&lt;b&gt;Frames for Sheet and Layout&lt;/b&gt;</description>
+<packages>
+</packages>
+<symbols>
+<symbol name="A4L-LOC">
+<wire x1="256.54" y1="3.81" x2="256.54" y2="8.89" width="0.1016" layer="94"/>
+<wire x1="256.54" y1="8.89" x2="256.54" y2="13.97" width="0.1016" layer="94"/>
+<wire x1="256.54" y1="13.97" x2="256.54" y2="19.05" width="0.1016" layer="94"/>
+<wire x1="256.54" y1="19.05" x2="256.54" y2="24.13" width="0.1016" layer="94"/>
+<wire x1="161.29" y1="3.81" x2="161.29" y2="24.13" width="0.1016" layer="94"/>
+<wire x1="161.29" y1="24.13" x2="215.265" y2="24.13" width="0.1016" layer="94"/>
+<wire x1="215.265" y1="24.13" x2="256.54" y2="24.13" width="0.1016" layer="94"/>
+<wire x1="246.38" y1="3.81" x2="246.38" y2="8.89" width="0.1016" layer="94"/>
+<wire x1="246.38" y1="8.89" x2="256.54" y2="8.89" width="0.1016" layer="94"/>
+<wire x1="246.38" y1="8.89" x2="215.265" y2="8.89" width="0.1016" layer="94"/>
+<wire x1="215.265" y1="8.89" x2="215.265" y2="3.81" width="0.1016" layer="94"/>
+<wire x1="215.265" y1="8.89" x2="215.265" y2="13.97" width="0.1016" layer="94"/>
+<wire x1="215.265" y1="13.97" x2="256.54" y2="13.97" width="0.1016" layer="94"/>
+<wire x1="215.265" y1="13.97" x2="215.265" y2="19.05" width="0.1016" layer="94"/>
+<wire x1="215.265" y1="19.05" x2="256.54" y2="19.05" width="0.1016" layer="94"/>
+<wire x1="215.265" y1="19.05" x2="215.265" y2="24.13" width="0.1016" layer="94"/>
+<text x="217.17" y="15.24" size="2.54" layer="94">&gt;DRAWING_NAME</text>
+<text x="217.17" y="10.16" size="2.286" layer="94">&gt;LAST_DATE_TIME</text>
+<text x="230.505" y="5.08" size="2.54" layer="94">&gt;SHEET</text>
+<text x="216.916" y="4.953" size="2.54" layer="94">Sheet:</text>
+<frame x1="0" y1="0" x2="260.35" y2="179.07" columns="6" rows="4" layer="94"/>
+</symbol>
+</symbols>
+<devicesets>
+<deviceset name="A4L-LOC" prefix="FRAME" uservalue="yes">
+<description>&lt;b&gt;FRAME&lt;/b&gt;&lt;p&gt;
+DIN A4, landscape with location and doc. field</description>
+<gates>
+<gate name="G$1" symbol="A4L-LOC" x="0" y="0"/>
+</gates>
+<devices>
+<device name="">
+<technologies>
+<technology name=""/>
+</technologies>
+</device>
+</devices>
+</deviceset>
+</devicesets>
+</library>
 </libraries>
 <attributes>
 </attributes>
@@ -1888,7 +1934,7 @@ Modified: by Eugene Sadovoi evgeni@eniks.com&lt;/author&gt;</description>
 <class number="0" name="default" width="0" drill="0">
 </class>
 <class number="1" name="VCC" width="0" drill="0">
-<clearance class="1" value="0.762"/>
+<clearance class="1" value="0.508"/>
 </class>
 </classes>
 <parts>
@@ -1898,8 +1944,8 @@ Modified: by Eugene Sadovoi evgeni@eniks.com&lt;/author&gt;</description>
 <part name="LED-4" library="SparkFun-LED" deviceset="LUXEON" device="SMD"/>
 <part name="VCC-CLIP" library="timon-diverses" deviceset="FUSE-HOLDER-5X20MM" device=""/>
 <part name="VCC-CLIP2" library="timon-diverses" deviceset="FUSE-HOLDER-5X20MM" device=""/>
-<part name="GND-CLIP" library="timon-diverses" deviceset="FUSE-HOLDER-5X20MM" device="" value="GND"/>
-<part name="GND-CLIP2" library="timon-diverses" deviceset="FUSE-HOLDER-5X20MM" device="" value="GND"/>
+<part name="GND-CLIP" library="timon-diverses" deviceset="FUSE-HOLDER-5X20MM" device="" value="FUSE-HOLDER-5X20MM"/>
+<part name="GND-CLIP2" library="timon-diverses" deviceset="FUSE-HOLDER-5X20MM" device="" value="FUSE-HOLDER-5X20MM"/>
 <part name="GND10" library="supply1" deviceset="GND" device=""/>
 <part name="GND11" library="supply1" deviceset="GND" device=""/>
 <part name="P+1" library="supply1" deviceset="VCC" device=""/>
@@ -1907,96 +1953,99 @@ Modified: by Eugene Sadovoi evgeni@eniks.com&lt;/author&gt;</description>
 <part name="IC4" library="PT4115" deviceset="PT4115" device=""/>
 <part name="SUPPLY4" library="SparkFun-Aesthetics" deviceset="VCC" device=""/>
 <part name="GND8" library="SparkFun-Aesthetics" deviceset="GND" device=""/>
-<part name="R4" library="SparkFun-Resistors" deviceset="RESISTOR" device="1206" value="0.3"/>
-<part name="D4" library="SparkFun-DiscreteSemi" deviceset="DIODE" device="SMA-KIT"/>
+<part name="R2" library="SparkFun-Resistors" deviceset="RESISTOR" device="1206" value="0.3"/>
+<part name="D2" library="SparkFun-DiscreteSemi" deviceset="DIODE" device="SMA-KIT"/>
 <part name="GND9" library="SparkFun-Aesthetics" deviceset="GND" device=""/>
 <part name="C1" library="SparkFun-Capacitors" deviceset="CAP_POL" device="E" value="100uF"/>
 <part name="INDUCTOR" library="inductor-coilcraft" deviceset="MSS1260" device=""/>
 <part name="GND1" library="supply1" deviceset="GND" device=""/>
-<part name="GND2" library="supply1" deviceset="GND" device=""/>
-<part name="GND3" library="supply1" deviceset="GND" device=""/>
-<part name="GND4" library="supply1" deviceset="GND" device=""/>
 <part name="VCC-CLIP1" library="timon-diverses" deviceset="FUSE-HOLDER-5X20MM" device=""/>
 <part name="VCC-CLIP3" library="timon-diverses" deviceset="FUSE-HOLDER-5X20MM" device=""/>
-<part name="GND-CLIP1" library="timon-diverses" deviceset="FUSE-HOLDER-5X20MM" device="" value="GND"/>
-<part name="GND-CLIP3" library="timon-diverses" deviceset="FUSE-HOLDER-5X20MM" device="" value="GND"/>
+<part name="GND-CLIP1" library="timon-diverses" deviceset="FUSE-HOLDER-5X20MM" device="" value="FUSE-HOLDER-5X20MM"/>
+<part name="GND-CLIP3" library="timon-diverses" deviceset="FUSE-HOLDER-5X20MM" device="" value="FUSE-HOLDER-5X20MM"/>
 <part name="GND5" library="supply1" deviceset="GND" device=""/>
 <part name="GND6" library="supply1" deviceset="GND" device=""/>
 <part name="PWM-CLIP1" library="timon-diverses" deviceset="FUSE-HOLDER-5X20MM" device=""/>
-<part name="D2" library="SparkFun-DiscreteSemi" deviceset="DIODE" device="SMA-KIT"/>
+<part name="D1" library="SparkFun-DiscreteSemi" deviceset="DIODE" device="SMA-KIT"/>
 <part name="R1" library="SparkFun-Resistors" deviceset="RESISTOR" device="1206" value="2k"/>
+<part name="GND2" library="supply1" deviceset="GND" device=""/>
+<part name="FRAME1" library="frames" deviceset="A4L-LOC" device=""/>
 </parts>
 <sheets>
 <sheet>
 <plain>
-<text x="111.76" y="-38.1" size="1.778" layer="91">PT4115 part created by Francesco Truzzi. http://truzzi.me/</text>
+<text x="43.18" y="-7.62" size="1.778" layer="91">PT4115 part created by Francesco Truzzi. http://truzzi.me/</text>
+<text x="102.87" y="-60.96" size="2.54" layer="94">By Timon Skerutsch</text>
+<text x="48.26" y="-68.58" size="2.54" layer="94">A simple constant current
+high efficiency LED driver.
+Setup for 330mA per LED.</text>
 </plain>
 <instances>
-<instance part="LED-1" gate="G$1" x="22.86" y="27.94"/>
-<instance part="LED-2" gate="G$1" x="22.86" y="-25.4"/>
-<instance part="LED-3" gate="G$1" x="22.86" y="-50.8"/>
-<instance part="LED-4" gate="G$1" x="22.86" y="2.54"/>
-<instance part="VCC-CLIP" gate="CLIP" x="71.12" y="60.96"/>
-<instance part="VCC-CLIP2" gate="CLIP" x="71.12" y="53.34"/>
-<instance part="GND-CLIP" gate="CLIP" x="71.12" y="35.56"/>
-<instance part="GND-CLIP2" gate="CLIP" x="71.12" y="27.94"/>
-<instance part="GND10" gate="1" x="81.28" y="33.02"/>
-<instance part="GND11" gate="1" x="81.28" y="25.4"/>
-<instance part="P+1" gate="VCC" x="116.84" y="43.18" rot="R90"/>
-<instance part="PWM-CLIP" gate="CLIP" x="104.14" y="25.4"/>
-<instance part="IC4" gate="IC" x="111.76" y="-25.4"/>
-<instance part="SUPPLY4" gate="G$1" x="93.98" y="7.62"/>
-<instance part="GND8" gate="1" x="101.6" y="-48.26"/>
-<instance part="R4" gate="G$1" x="101.6" y="0" smashed="yes" rot="R90">
-<attribute name="NAME" x="100.33" y="1.2954" size="1.778" layer="95" rot="R180"/>
+<instance part="LED-1" gate="G$1" x="99.06" y="35.56"/>
+<instance part="LED-2" gate="G$1" x="63.5" y="7.62" rot="R180"/>
+<instance part="LED-3" gate="G$1" x="63.5" y="33.02" rot="R180"/>
+<instance part="LED-4" gate="G$1" x="99.06" y="10.16"/>
+<instance part="VCC-CLIP" gate="CLIP" x="-33.02" y="-2.54"/>
+<instance part="VCC-CLIP2" gate="CLIP" x="-33.02" y="-10.16"/>
+<instance part="GND-CLIP" gate="CLIP" x="-68.58" y="15.24"/>
+<instance part="GND-CLIP2" gate="CLIP" x="-68.58" y="7.62"/>
+<instance part="GND10" gate="1" x="-58.42" y="12.7"/>
+<instance part="GND11" gate="1" x="-58.42" y="5.08"/>
+<instance part="P+1" gate="VCC" x="-20.32" y="30.48" rot="R90"/>
+<instance part="PWM-CLIP" gate="CLIP" x="-60.96" y="-25.4"/>
+<instance part="IC4" gate="IC" x="43.18" y="5.08"/>
+<instance part="SUPPLY4" gate="G$1" x="25.4" y="38.1"/>
+<instance part="GND8" gate="1" x="33.02" y="-17.78"/>
+<instance part="R2" gate="G$1" x="33.02" y="30.48" smashed="yes" rot="R90">
+<attribute name="NAME" x="31.75" y="31.7754" size="1.778" layer="95" rot="R180"/>
 </instance>
-<instance part="D4" gate="G$1" x="106.68" y="-10.16" smashed="yes" rot="R180">
-<attribute name="NAME" x="106.68" y="-11.9126" size="1.778" layer="95" rot="R180"/>
-<attribute name="VALUE" x="104.14" y="-7.8486" size="1.778" layer="96" rot="R180"/>
+<instance part="D2" gate="G$1" x="38.1" y="20.32" smashed="yes" rot="R180">
+<attribute name="NAME" x="38.1" y="18.5674" size="1.778" layer="95" rot="R180"/>
+<attribute name="VALUE" x="35.56" y="22.6314" size="1.778" layer="96" rot="R180"/>
 </instance>
-<instance part="GND9" gate="1" x="86.36" y="-10.16"/>
-<instance part="C1" gate="G$1" x="86.36" y="0"/>
-<instance part="INDUCTOR" gate="G$1" x="109.22" y="0"/>
-<instance part="GND1" gate="1" x="12.7" y="27.94" rot="R270"/>
-<instance part="GND2" gate="1" x="12.7" y="2.54" rot="R270"/>
-<instance part="GND3" gate="1" x="12.7" y="-25.4" rot="R270"/>
-<instance part="GND4" gate="1" x="12.7" y="-50.8" rot="R270"/>
-<instance part="VCC-CLIP1" gate="CLIP" x="71.12" y="78.74"/>
-<instance part="VCC-CLIP3" gate="CLIP" x="71.12" y="71.12"/>
-<instance part="GND-CLIP1" gate="CLIP" x="53.34" y="17.78"/>
-<instance part="GND-CLIP3" gate="CLIP" x="53.34" y="10.16"/>
-<instance part="GND5" gate="1" x="63.5" y="15.24"/>
-<instance part="GND6" gate="1" x="63.5" y="7.62"/>
-<instance part="PWM-CLIP1" gate="CLIP" x="134.62" y="25.4"/>
-<instance part="D2" gate="G$1" x="121.92" y="43.18" smashed="yes" rot="R180">
-<attribute name="NAME" x="121.92" y="41.4274" size="1.778" layer="95" rot="R180"/>
-<attribute name="VALUE" x="119.38" y="45.4914" size="1.778" layer="96" rot="R180"/>
+<instance part="GND9" gate="1" x="17.78" y="20.32"/>
+<instance part="C1" gate="G$1" x="17.78" y="30.48"/>
+<instance part="INDUCTOR" gate="G$1" x="40.64" y="30.48"/>
+<instance part="GND1" gate="1" x="88.9" y="35.56" rot="R270"/>
+<instance part="VCC-CLIP1" gate="CLIP" x="-33.02" y="15.24"/>
+<instance part="VCC-CLIP3" gate="CLIP" x="-33.02" y="7.62"/>
+<instance part="GND-CLIP1" gate="CLIP" x="-68.58" y="-2.54"/>
+<instance part="GND-CLIP3" gate="CLIP" x="-68.58" y="-10.16"/>
+<instance part="GND5" gate="1" x="-58.42" y="-5.08"/>
+<instance part="GND6" gate="1" x="-58.42" y="-12.7"/>
+<instance part="PWM-CLIP1" gate="CLIP" x="-30.48" y="-25.4"/>
+<instance part="D1" gate="G$1" x="-12.7" y="30.48" smashed="yes" rot="R180">
+<attribute name="NAME" x="-12.7" y="28.7274" size="1.778" layer="95" rot="R180"/>
+<attribute name="VALUE" x="-15.24" y="32.7914" size="1.778" layer="96" rot="R180"/>
 </instance>
-<instance part="R1" gate="G$1" x="81.28" y="-25.4"/>
+<instance part="R1" gate="G$1" x="12.7" y="5.08"/>
+<instance part="GND2" gate="1" x="88.9" y="10.16" rot="R270"/>
+<instance part="FRAME1" gate="G$1" x="-114.3" y="-81.28"/>
 </instances>
 <busses>
 </busses>
 <nets>
-<net name="VCC" class="0">
+<net name="VCC" class="1">
 <segment>
 <pinref part="IC4" gate="IC" pin="VIN"/>
 <pinref part="SUPPLY4" gate="G$1" pin="VCC"/>
-<wire x1="93.98" y1="-12.7" x2="93.98" y2="-10.16" width="0.1524" layer="91"/>
-<pinref part="R4" gate="G$1" pin="2"/>
-<wire x1="93.98" y1="-10.16" x2="93.98" y2="5.08" width="0.1524" layer="91"/>
-<wire x1="93.98" y1="5.08" x2="93.98" y2="7.62" width="0.1524" layer="91"/>
-<wire x1="101.6" y1="5.08" x2="93.98" y2="5.08" width="0.1524" layer="91"/>
-<junction x="93.98" y="5.08"/>
-<pinref part="D4" gate="G$1" pin="C"/>
-<wire x1="104.14" y1="-10.16" x2="93.98" y2="-10.16" width="0.1524" layer="91"/>
-<junction x="93.98" y="-10.16"/>
-<wire x1="86.36" y1="2.54" x2="86.36" y2="5.08" width="0.1524" layer="91"/>
-<wire x1="86.36" y1="5.08" x2="93.98" y2="5.08" width="0.1524" layer="91"/>
+<wire x1="25.4" y1="17.78" x2="25.4" y2="20.32" width="0.1524" layer="91"/>
+<pinref part="R2" gate="G$1" pin="2"/>
+<wire x1="25.4" y1="20.32" x2="25.4" y2="35.56" width="0.1524" layer="91"/>
+<wire x1="25.4" y1="35.56" x2="25.4" y2="38.1" width="0.1524" layer="91"/>
+<wire x1="33.02" y1="35.56" x2="25.4" y2="35.56" width="0.1524" layer="91"/>
+<junction x="25.4" y="35.56"/>
+<pinref part="D2" gate="G$1" pin="C"/>
+<wire x1="35.56" y1="20.32" x2="25.4" y2="20.32" width="0.1524" layer="91"/>
+<junction x="25.4" y="20.32"/>
+<wire x1="17.78" y1="33.02" x2="17.78" y2="35.56" width="0.1524" layer="91"/>
+<wire x1="17.78" y1="35.56" x2="25.4" y2="35.56" width="0.1524" layer="91"/>
 <pinref part="C1" gate="G$1" pin="+"/>
 </segment>
 <segment>
 <pinref part="P+1" gate="VCC" pin="VCC"/>
-<pinref part="D2" gate="G$1" pin="C"/>
+<pinref part="D1" gate="G$1" pin="C"/>
+<wire x1="-17.78" y1="30.48" x2="-15.24" y2="30.48" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="GND" class="0">
@@ -2011,28 +2060,16 @@ Modified: by Eugene Sadovoi evgeni@eniks.com&lt;/author&gt;</description>
 <segment>
 <pinref part="GND8" gate="1" pin="GND"/>
 <pinref part="IC4" gate="IC" pin="GND"/>
-<wire x1="101.6" y1="-45.72" x2="101.6" y2="-38.1" width="0.1524" layer="91"/>
+<wire x1="33.02" y1="-15.24" x2="33.02" y2="-7.62" width="0.1524" layer="91"/>
 </segment>
 <segment>
 <pinref part="GND9" gate="1" pin="GND"/>
-<wire x1="86.36" y1="-7.62" x2="86.36" y2="-5.08" width="0.1524" layer="91"/>
+<wire x1="17.78" y1="22.86" x2="17.78" y2="25.4" width="0.1524" layer="91"/>
 <pinref part="C1" gate="G$1" pin="-"/>
 </segment>
 <segment>
 <pinref part="LED-1" gate="G$1" pin="S"/>
 <pinref part="GND1" gate="1" pin="GND"/>
-</segment>
-<segment>
-<pinref part="LED-4" gate="G$1" pin="S"/>
-<pinref part="GND2" gate="1" pin="GND"/>
-</segment>
-<segment>
-<pinref part="LED-2" gate="G$1" pin="S"/>
-<pinref part="GND3" gate="1" pin="GND"/>
-</segment>
-<segment>
-<pinref part="LED-3" gate="G$1" pin="S"/>
-<pinref part="GND4" gate="1" pin="GND"/>
 </segment>
 <segment>
 <pinref part="GND-CLIP1" gate="CLIP" pin="INPUT"/>
@@ -2042,109 +2079,119 @@ Modified: by Eugene Sadovoi evgeni@eniks.com&lt;/author&gt;</description>
 <pinref part="GND-CLIP3" gate="CLIP" pin="INPUT"/>
 <pinref part="GND6" gate="1" pin="GND"/>
 </segment>
+<segment>
+<pinref part="LED-4" gate="G$1" pin="S"/>
+<pinref part="GND2" gate="1" pin="GND"/>
+</segment>
 </net>
 <net name="LED-" class="0">
 <segment>
 <pinref part="LED-3" gate="G$1" pin="C"/>
-<wire x1="22.86" y1="-58.42" x2="22.86" y2="-60.96" width="0.1524" layer="91"/>
-<label x="22.86" y="-63.5" size="1.778" layer="95"/>
-</segment>
-<segment>
-<wire x1="109.22" y1="7.62" x2="109.22" y2="12.7" width="0.1524" layer="91"/>
-<label x="109.22" y="12.7" size="1.778" layer="95"/>
+<wire x1="63.5" y1="40.64" x2="63.5" y2="43.18" width="0.1524" layer="91"/>
+<wire x1="40.64" y1="38.1" x2="40.64" y2="43.18" width="0.1524" layer="91"/>
+<label x="40.64" y="43.18" size="1.778" layer="95"/>
 <pinref part="INDUCTOR" gate="G$1" pin="P$1"/>
+<wire x1="63.5" y1="43.18" x2="40.64" y2="43.18" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="LED+" class="0">
 <segment>
-<pinref part="LED-1" gate="G$1" pin="A"/>
-<wire x1="22.86" y1="33.02" x2="22.86" y2="35.56" width="0.1524" layer="91"/>
-<label x="22.86" y="35.56" size="1.778" layer="95"/>
-</segment>
-<segment>
-<pinref part="R4" gate="G$1" pin="1"/>
+<pinref part="R2" gate="G$1" pin="1"/>
 <pinref part="IC4" gate="IC" pin="CSN"/>
-<wire x1="101.6" y1="-5.08" x2="101.6" y2="-7.62" width="0.1524" layer="91"/>
-<wire x1="101.6" y1="-7.62" x2="101.6" y2="-12.7" width="0.1524" layer="91"/>
-<wire x1="101.6" y1="-7.62" x2="104.14" y2="-7.62" width="0.1524" layer="91"/>
-<junction x="101.6" y="-7.62"/>
-<wire x1="104.14" y1="-7.62" x2="104.14" y2="7.62" width="0.1524" layer="91"/>
-<label x="101.6" y="7.62" size="1.778" layer="95"/>
+<wire x1="33.02" y1="25.4" x2="33.02" y2="22.86" width="0.1524" layer="91"/>
+<wire x1="33.02" y1="22.86" x2="33.02" y2="17.78" width="0.1524" layer="91"/>
+<wire x1="33.02" y1="22.86" x2="35.56" y2="22.86" width="0.1524" layer="91"/>
+<junction x="33.02" y="22.86"/>
+<wire x1="35.56" y1="22.86" x2="35.56" y2="48.26" width="0.1524" layer="91"/>
+<label x="35.56" y="48.26" size="1.778" layer="95"/>
+<wire x1="35.56" y1="48.26" x2="99.06" y2="48.26" width="0.1524" layer="91"/>
+<pinref part="LED-1" gate="G$1" pin="A"/>
+<wire x1="99.06" y1="48.26" x2="99.06" y2="40.64" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="PWM" class="0">
 <segment>
 <pinref part="PWM-CLIP" gate="CLIP" pin="INPUT"/>
-<wire x1="114.3" y1="25.4" x2="119.38" y2="25.4" width="0.1524" layer="91"/>
-<label x="116.84" y="22.86" size="1.778" layer="95"/>
+<wire x1="-50.8" y1="-25.4" x2="-45.72" y2="-25.4" width="0.1524" layer="91"/>
+<label x="-48.26" y="-27.94" size="1.778" layer="95"/>
 </segment>
 <segment>
 <pinref part="PWM-CLIP1" gate="CLIP" pin="INPUT"/>
-<wire x1="144.78" y1="25.4" x2="149.86" y2="25.4" width="0.1524" layer="91"/>
-<label x="147.32" y="22.86" size="1.778" layer="95"/>
+<wire x1="-20.32" y1="-25.4" x2="-15.24" y2="-25.4" width="0.1524" layer="91"/>
+<label x="-17.78" y="-27.94" size="1.778" layer="95"/>
 </segment>
 <segment>
 <pinref part="R1" gate="G$1" pin="1"/>
-<wire x1="76.2" y1="-25.4" x2="73.66" y2="-25.4" width="0.1524" layer="91"/>
-<label x="66.04" y="-25.4" size="1.778" layer="95"/>
+<wire x1="7.62" y1="5.08" x2="0" y2="5.08" width="0.1524" layer="91"/>
+<label x="0" y="5.08" size="1.778" layer="95"/>
 </segment>
 </net>
 <net name="N$1" class="0">
 <segment>
-<pinref part="D4" gate="G$1" pin="A"/>
+<pinref part="D2" gate="G$1" pin="A"/>
 <pinref part="IC4" gate="IC" pin="SW"/>
-<wire x1="109.22" y1="-10.16" x2="109.22" y2="-12.7" width="0.1524" layer="91"/>
-<wire x1="109.22" y1="-7.62" x2="109.22" y2="-10.16" width="0.1524" layer="91"/>
-<junction x="109.22" y="-10.16"/>
+<wire x1="40.64" y1="20.32" x2="40.64" y2="17.78" width="0.1524" layer="91"/>
+<wire x1="40.64" y1="22.86" x2="40.64" y2="20.32" width="0.1524" layer="91"/>
+<junction x="40.64" y="20.32"/>
 <pinref part="INDUCTOR" gate="G$1" pin="P$2"/>
 </segment>
 </net>
 <net name="VCC-RAW" class="1">
 <segment>
-<wire x1="124.46" y1="43.18" x2="127" y2="43.18" width="0.1524" layer="91"/>
-<label x="127" y="43.18" size="1.778" layer="95"/>
-<pinref part="D2" gate="G$1" pin="A"/>
+<wire x1="-10.16" y1="30.48" x2="-7.62" y2="30.48" width="0.1524" layer="91"/>
+<label x="-7.62" y="30.48" size="1.778" layer="95"/>
+<pinref part="D1" gate="G$1" pin="A"/>
 </segment>
 <segment>
-<wire x1="81.28" y1="60.96" x2="83.82" y2="60.96" width="0.1524" layer="91"/>
-<label x="83.82" y="58.42" size="1.778" layer="95"/>
+<wire x1="-22.86" y1="-2.54" x2="-20.32" y2="-2.54" width="0.1524" layer="91"/>
+<label x="-20.32" y="-5.08" size="1.778" layer="95"/>
 <pinref part="VCC-CLIP" gate="CLIP" pin="INPUT"/>
 </segment>
 <segment>
-<wire x1="81.28" y1="53.34" x2="83.82" y2="53.34" width="0.1524" layer="91"/>
-<label x="83.82" y="50.8" size="1.778" layer="95"/>
+<wire x1="-22.86" y1="-10.16" x2="-20.32" y2="-10.16" width="0.1524" layer="91"/>
+<label x="-20.32" y="-12.7" size="1.778" layer="95"/>
 <pinref part="VCC-CLIP2" gate="CLIP" pin="INPUT"/>
 </segment>
 <segment>
-<wire x1="81.28" y1="78.74" x2="83.82" y2="78.74" width="0.1524" layer="91"/>
-<label x="83.82" y="76.2" size="1.778" layer="95"/>
+<wire x1="-22.86" y1="15.24" x2="-20.32" y2="15.24" width="0.1524" layer="91"/>
+<label x="-20.32" y="12.7" size="1.778" layer="95"/>
 <pinref part="VCC-CLIP1" gate="CLIP" pin="INPUT"/>
 </segment>
 <segment>
-<wire x1="81.28" y1="71.12" x2="83.82" y2="71.12" width="0.1524" layer="91"/>
-<label x="83.82" y="68.58" size="1.778" layer="95"/>
+<wire x1="-22.86" y1="7.62" x2="-20.32" y2="7.62" width="0.1524" layer="91"/>
+<label x="-20.32" y="5.08" size="1.778" layer="95"/>
 <pinref part="VCC-CLIP3" gate="CLIP" pin="INPUT"/>
+</segment>
+<segment>
+<wire x1="73.66" y1="7.62" x2="71.12" y2="7.62" width="0.1524" layer="91"/>
+<pinref part="LED-2" gate="G$1" pin="S"/>
+<label x="83.82" y="7.62" size="1.778" layer="95" rot="R180"/>
+</segment>
+<segment>
+<wire x1="73.66" y1="33.02" x2="71.12" y2="33.02" width="0.1524" layer="91"/>
+<pinref part="LED-3" gate="G$1" pin="S"/>
+<label x="83.82" y="33.02" size="1.778" layer="95" rot="R180"/>
 </segment>
 </net>
 <net name="N$2" class="0">
 <segment>
 <pinref part="LED-4" gate="G$1" pin="C"/>
 <pinref part="LED-2" gate="G$1" pin="A"/>
-<wire x1="22.86" y1="-5.08" x2="22.86" y2="-20.32" width="0.1524" layer="91"/>
+<wire x1="99.06" y1="2.54" x2="63.5" y2="2.54" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="N$3" class="0">
 <segment>
 <pinref part="LED-2" gate="G$1" pin="C"/>
 <pinref part="LED-3" gate="G$1" pin="A"/>
-<wire x1="22.86" y1="-33.02" x2="22.86" y2="-45.72" width="0.1524" layer="91"/>
+<wire x1="63.5" y1="15.24" x2="63.5" y2="27.94" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="N$4" class="0">
 <segment>
 <pinref part="LED-1" gate="G$1" pin="C"/>
 <pinref part="LED-4" gate="G$1" pin="A"/>
-<wire x1="22.86" y1="20.32" x2="22.86" y2="7.62" width="0.1524" layer="91"/>
+<wire x1="99.06" y1="27.94" x2="99.06" y2="15.24" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="N$5" class="0">
@@ -2158,4 +2205,10 @@ Modified: by Eugene Sadovoi evgeni@eniks.com&lt;/author&gt;</description>
 </sheets>
 </schematic>
 </drawing>
+<compatibility>
+<note version="6.3" minversion="6.2.2" severity="warning">
+Since Version 6.2.2 text objects can contain more than one line,
+which will not be processed correctly with this version.
+</note>
+</compatibility>
 </eagle>
