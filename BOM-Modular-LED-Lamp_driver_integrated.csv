@@ -1,4 +1,4 @@
-Qty,Value,Device,Package,Parts,Description,AliExpress Low Qty,AliExpress High Qty,Digikey
+﻿Qty,Value,Device,Package,Parts,Description,AliExpress Low Qty,AliExpress High Qty,Digikey
 2,1A,DIODESMA-KIT,DO-214 (SMA) or SOD-123,"D1, D2",Diode,https://www.aliexpress.com/item/100pcs-sma-1N5819-SMD-IN5819-1A-40V-do-214ac-Schottky-diode-ss14-free-shipping/32731083055.html,https://www.aliexpress.com/item/Free-Shipping-1000PCS-1N5819-IN5819-SS14-1A-40V-Barrier-Rectifiers-Diode-SMA/1947370006.html,https://www.digikey.de/product-detail/en/diodes-incorporated/B340A-13-F/B340A-FDICT-ND/725054
 1,68uH,MSS1260 or similar,SMT D=7-10mm,INDUCTOR,SMT Power Inductor,https://www.aliexpress.com/item/25PCS-10-10-4MM-68UH-1-5A-SMD-104R-Shielded-Inductors/32786901262.html,,
 1,PT4115,PT4115,PT4115,IC4,"30V, 1.2A Step-down Constant Current Driver",https://www.aliexpress.com/item/10pcs-PT4115B89E-SOT89-5-PT4115-SOT-SMD-free-shipping/32720647869.html,https://www.aliexpress.com/item/200pcs-LOT-free-shipping-PT4115B89E-PT4115B-PT4115-4115-SOT-89-5-100-New-and-High-Quality/32359827347.html,
