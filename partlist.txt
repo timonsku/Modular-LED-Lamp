@@ -1,0 +1,31 @@
+Partlist
+
+Exported from Modular-LED-Lamp_driver_integrated.sch at 01.08.2017 19:53
+
+EAGLE Version 8.2.2 Copyright (c) 1988-2017 Autodesk, Inc.
+
+Assembly variant: 
+
+Part      Value              Device             Package            Library               Sheet
+
+C1        100uF              CAP_POLE           PANASONIC_E        SparkFun-Capacitors   1
+D1                           DIODESMA-KIT       SMA-DIODE-KIT      SparkFun-DiscreteSemi 1
+D2                           DIODESMA-KIT       SMA-DIODE-KIT      SparkFun-DiscreteSemi 1
+GND-CLIP  FUSE-HOLDER-5X20MM FUSE-HOLDER-5X20MM FUSE-HOLDER-5X20MM timon-diverses        1
+GND-CLIP1 FUSE-HOLDER-5X20MM FUSE-HOLDER-5X20MM FUSE-HOLDER-5X20MM timon-diverses        1
+GND-CLIP2 FUSE-HOLDER-5X20MM FUSE-HOLDER-5X20MM FUSE-HOLDER-5X20MM timon-diverses        1
+GND-CLIP3 FUSE-HOLDER-5X20MM FUSE-HOLDER-5X20MM FUSE-HOLDER-5X20MM timon-diverses        1
+IC4                          PT4115             PT4115             PT4115                1
+INDUCTOR                     MSS1260            MSS1260            inductor-coilcraft    1
+LED-1     LUXEONSMD          LUXEONSMD          LUXEON             SparkFun-LED          1
+LED-2     LUXEONSMD          LUXEONSMD          LUXEON             SparkFun-LED          1
+LED-3     LUXEONSMD          LUXEONSMD          LUXEON             SparkFun-LED          1
+LED-4     LUXEONSMD          LUXEONSMD          LUXEON             SparkFun-LED          1
+PWM-CLIP  FUSE-HOLDER-5X20MM FUSE-HOLDER-5X20MM FUSE-HOLDER-5X20MM timon-diverses        1
+PWM-CLIP1 FUSE-HOLDER-5X20MM FUSE-HOLDER-5X20MM FUSE-HOLDER-5X20MM timon-diverses        1
+R1        2k                 RESISTOR1206       1206               SparkFun-Resistors    1
+R2        0.3                RESISTOR1206       1206               SparkFun-Resistors    1
+VCC-CLIP  FUSE-HOLDER-5X20MM FUSE-HOLDER-5X20MM FUSE-HOLDER-5X20MM timon-diverses        1
+VCC-CLIP1 FUSE-HOLDER-5X20MM FUSE-HOLDER-5X20MM FUSE-HOLDER-5X20MM timon-diverses        1
+VCC-CLIP2 FUSE-HOLDER-5X20MM FUSE-HOLDER-5X20MM FUSE-HOLDER-5X20MM timon-diverses        1
+VCC-CLIP3 FUSE-HOLDER-5X20MM FUSE-HOLDER-5X20MM FUSE-HOLDER-5X20MM timon-diverses        1
